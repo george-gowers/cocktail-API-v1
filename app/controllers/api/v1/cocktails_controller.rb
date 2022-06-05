@@ -9,7 +9,9 @@ class Api::V1::CocktailsController < Api::V1::BaseController
   end
 
   def create
-    @cocktail = Cocktail.new(cocktail_params)
+    params = cocktail_params
+    params[:name] = params[:name].downcase.capitalize
+    @cocktail = Cocktail.new(params)
     if @cocktail.save
       render :show, status: :created
     else
