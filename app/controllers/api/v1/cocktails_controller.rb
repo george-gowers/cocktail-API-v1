@@ -10,19 +10,11 @@ class Api::V1::CocktailsController < Api::V1::BaseController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    if unique_cocktail
-      if @cocktail.save
-        render :show, status: :created
-      else
-        render_error
-      end
+    if @cocktail.save
+      render :show, status: :created
     else
-      render_not_unique
+      render_error
     end
-  end
-
-  def unique_cocktail
-    Cocktail.find_by(name: cocktail_params[:name]) == nil
   end
 
   private
@@ -33,11 +25,6 @@ class Api::V1::CocktailsController < Api::V1::BaseController
 
   def render_error
     render json: { errors: @cocktail.errors.full_messages },
-      status: :unprocessable_entity
-  end
-
-  def render_not_unique
-    render json: { errors: "cocktail is not unique" },
       status: :unprocessable_entity
   end
 
