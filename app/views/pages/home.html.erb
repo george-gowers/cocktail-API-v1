@@ -1,2 +1,34 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="background">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-8">
+        <div class="form">
+
+          <h1>Cocktail API</h1>
+
+          <p>Welcome to the Cocktail API. We have a collection of over 600 cocktails in our database and it keeps growing. And the best news is it's free to use! </p>
+
+          <p>There are 3 endpoints for this API:</p>
+          <p><strong>1. search for a cocktail by name</strong> (for instance: mojito)</p>
+          <p>http://localhost:3000/api/v1/cocktails/search?name=COCKTAIL_NAME</p>
+
+          <p><strong>2. search for a cocktail by ID</strong> (for instance: 700)</p>
+          <p>http://localhost:3000/api/v1/cocktails/ID</p>
+
+          <p><strong>3. uploading a cocktail with a POST request</strong></p>
+          <p>http://localhost:3000/api/v1/cocktails</p>
+
+          <pre>{ "cocktail": { "name": "Mojito",
+                "ingredients": "Light rum, Lime, Sugar, Mint, Soda water",
+                "preparation": "Fill the glass with cracked ice. Pour the rum and add a splash of soda water ...",
+                "image": "https://www.yourcocktailimage.jpg"
+               }
+}
+
+                </pre>
+  <p>&nbsp;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
